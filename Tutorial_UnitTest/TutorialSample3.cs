@@ -7,11 +7,11 @@ namespace Tutorial_UnitTest
     /// 여러 테스트 클레스에서 동일한 객체를 유지해야 할때 ICollectionFixture 인터페이스를 사용한다.
     /// </summary>
     [Collection("Context collection")]
-    public class TutorialSample3 : IDisposable
+    public class TutorialSample3_1 : IDisposable
     {
         InMemoryDbContextFixture _fixture;
 
-        public TutorialSample3(InMemoryDbContextFixture fixture)
+        public TutorialSample3_1(InMemoryDbContextFixture fixture)
         {
             _fixture = fixture;            
             //TODO:초기화 입력
@@ -38,11 +38,11 @@ namespace Tutorial_UnitTest
     }
 
     [Collection("Context collection")]
-    public class TutorialSample4 : IDisposable
+    public class TutorialSample3_2 : IDisposable
     {
         InMemoryDbContextFixture _fixture;
 
-        public TutorialSample4(InMemoryDbContextFixture fixture)
+        public TutorialSample3_2(InMemoryDbContextFixture fixture)
         {
             _fixture = fixture;
             //TODO:초기화 입력

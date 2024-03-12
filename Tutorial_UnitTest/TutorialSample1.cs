@@ -5,31 +5,42 @@ namespace Tutorial_UnitTest
 {
     /// <summary>
     /// 유닛테스트 튜토리얼  
-    /// https://xunit.net/
+    /// [참고자료]
+    /// https://hamidmosalla.com/2020/01/05/xunit-part-1-xunit-packages-and-writing-your-first-unit-test/
     /// https://teamsmiley.github.io/2020/03/11/xunit-unittest/
-    /// https://hamidmosalla.com/2020/01/20/xunit-part-3-action-based-assertions-assert-raises-and-assert-throws/
+    /// https://xunit.net/
     /// (xUnit은 각 함수마다 클레스 객체를 생성하여 실행 후 객체를 파괴한다.)
     /// </summary>
     public class TutorialSample1 : IDisposable
     {
+        /// <summary>
+        /// 초기화 코드 입력
+        /// </summary>
         public TutorialSample1()
-        {
-            //TODO:초기화 입력
+        {            
             Debug.WriteLine("TutorialSample1:Constructor");
         }
 
+        /// <summary>
+        /// 종료시 작업해야하는 부분 입력
+        /// </summary>
         public void Dispose()
         {
-            //TODO:종료시 작업해야하는 부분 입력
             Debug.WriteLine("TutorialSample1:CleanUp or Dispose Method");
         }
 
+        /// <summary>
+        /// 함수마다 객체가 새로 성성되는지 확인하기 위한 함수
+        /// </summary>
         [Fact]        
         public void test1()
         {
             Debug.WriteLine("TutorialSample1:test1 - 함수마다 객체가 새로 생성되는지 테스트");
         }
 
+        /// <summary>
+        /// 함수마다 객체가 새로 성성되는지 확인하기 위한 함수
+        /// </summary>
         [Fact]
         public void test2()
         {
@@ -88,6 +99,9 @@ namespace Tutorial_UnitTest
             Debug.WriteLine($"test4:{info.UserID} {info.UserName} {info.Age}");
         }
 
+        /// <summary>
+        /// 예상되는 결과 값과 맞는지 확인하는 함수들의 사용방법 샘플
+        /// </summary>
         [Fact]
         public void AssertTest()
         {
