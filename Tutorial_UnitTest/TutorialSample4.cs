@@ -161,5 +161,28 @@ namespace Tutorial_UnitTest
             mock.Object.FirstName.Should().Be("Robert");
             mock.Object.LastName.Should().Be("Paulson");
         }
+
+
+        /// <summary>
+        /// 테스트를 위한 더미 함수 사용방법
+        /// </summary>
+        [Fact]
+        public void  DummyFunction()
+        {
+            var mock = new Mock<IPropertyManager>();
+
+            mock.SetupAllProperties();
+            mock.Setup(x => x.MutateFirstName(It.IsAny<string>()))
+            .Callback<string>((name) =>
+            {
+                mock.Object.FirstName = name;
+            });
+
+
+            var manager = mock.Object;
+            manager.MutateFirstName("Robert");
+
+            mock.Object.FirstName.Should().Be("Robert");
+        }
     }
 }
